@@ -1,9 +1,13 @@
 <script>
 	const name = "Jim";
+	const lastName = "<b>Lougheed</b>";
+	const hack = `<a href="#" onclick="alert('You have been hacked!')">Win a prize!</a>`
 </script>
 
 <main>
 	<h1>Hello, {name}!</h1>
+	<div>{@html lastName}</div>
+	<div>{@html hack}</div>
 </main>
 
 <style>
