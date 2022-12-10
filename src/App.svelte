@@ -1,13 +1,17 @@
 <script>
 	const name = "Jim";
 	const lastName = "<b>Lougheed</b>";
-	const hack = `<a href="#" onclick="alert('You have been hacked!')">Win a prize!</a>`
+	const hack = `<a href="#" onclick="alert('You have been hacked!')">Win a prize!</a>`;
+	const id = "heading";
+	const disabled = false;
 </script>
 
 <main>
 	<h1>Hello, {name}!</h1>
 	<div>{@html lastName}</div>
 	<div>{@html hack}</div>
+	<h2 {id}>This is a heading</h2>
+	<button {disabled}>Bind</button>
 </main>
 
 <style>
