@@ -11,6 +11,8 @@
 
 	// VIDS 9-
 	const num = 5;
+	const names = ["Bruce", "Clark", "Diana"];
+	const fullNames = [{firstName: "Bruce", lastName: "Wayne"}, {firstName: "Clark", lastName: "Kent"}, {firstName: "Princess", lastName: "Diana"}];
 </script>
 
 <main>
@@ -28,6 +30,7 @@
 	<button {disabled}>Bind</button> -->
 
 	<!-- VIDS 9- -->
+	<h1>Number: {num}</h1>
 	{#if num === 0}
 	<h2>The number is 0</h2>
 	{:else if num < 0}
@@ -37,6 +40,14 @@
 	{:else}
 	<h2>The number is not a number</h2>
 	{/if}
+
+	<h1>Names:</h1>
+	<!-- {#each names as name, index}
+	<h2>{index + 1}: {name}</h2>
+	{/each} -->
+	{#each fullNames as name, index}
+	<h2>{index + 1}: {name.firstName} {name.lastName}</h2>
+	{/each}
 </main>
 
 <style>
