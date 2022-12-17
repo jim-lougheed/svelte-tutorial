@@ -9,10 +9,18 @@
 	// const isPromoted = true;
 	// const promoted = true;
 
-	// VIDS 9-
-	const num = 5;
-	const names = ["Bruce", "Clark", "Diana"];
-	const fullNames = [{firstName: "Bruce", lastName: "Wayne"}, {firstName: "Clark", lastName: "Kent"}, {firstName: "Princess", lastName: "Diana"}];
+	// VIDS 9-11
+	// const num = 5;
+	// const names = ["Bruce", "Clark", "Diana"];
+	// const fullNames = [{firstName: "Bruce", lastName: "Wayne"}, {firstName: "Clark", lastName: "Kent"}, {firstName: "Princess", lastName: "Diana"}];
+
+	// VIDS 12-
+	let count = 0;
+
+	function handleClick(event, increment) {
+		console.log(event, increment);
+		count += increment;
+	}
 </script>
 
 <main>
@@ -29,8 +37,8 @@
 
 	<button {disabled}>Bind</button> -->
 
-	<!-- VIDS 9- -->
-	<h1>Number: {num}</h1>
+	<!-- VIDS 9-11 -->
+	<!-- <h1>Number: {num}</h1>
 	{#if num === 0}
 	<h2>The number is 0</h2>
 	{:else if num < 0}
@@ -42,12 +50,17 @@
 	{/if}
 
 	<h1>Names:</h1>
-	<!-- {#each names as name, index}
+	{#each names as name, index}
 	<h2>{index + 1}: {name}</h2>
-	{/each} -->
-	{#each fullNames as name, index}
-	<h2>{index + 1}: {name.firstName} {name.lastName}</h2>
 	{/each}
+	{#each fullNames as name, index (name.first)}
+	<h2>{index + 1}: {name.firstName} {name.lastName}</h2>
+	{/each} -->
+
+	<!-- VIDS 12- -->
+	<button on:click={() => count = count + 1}>Count: {count}</button>
+	<button on:click={(event) => handleClick(event, 5)}>Count: {count}</button>
+	<button on:click={(event) => handleClick(event, 10)}>Count: {count}</button>
 </main>
 
 <style>
