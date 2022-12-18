@@ -14,13 +14,21 @@
 	// const names = ["Bruce", "Clark", "Diana"];
 	// const fullNames = [{firstName: "Bruce", lastName: "Wayne"}, {firstName: "Clark", lastName: "Kent"}, {firstName: "Princess", lastName: "Diana"}];
 
-	// VIDS 12-
-	let count = 0;
+	// VID 12
+	// let count = 0;
 
-	function handleClick(event, increment) {
-		console.log(event, increment);
-		count += increment;
-	}
+	// function handleClick(event, increment) {
+	// 	console.log(event, increment);
+	// 	count += increment;
+	// }
+
+	// VIDS 13-
+	const formValues = {
+		name: '',
+		profileSummary: '',
+		country: '',
+		jobLocation: [],
+	};
 </script>
 
 <main>
@@ -57,10 +65,43 @@
 	<h2>{index + 1}: {name.firstName} {name.lastName}</h2>
 	{/each} -->
 
-	<!-- VIDS 12- -->
-	<button on:click={() => count = count + 1}>Count: {count}</button>
+	<!-- VID 12 -->
+	<!-- <button on:click={() => count = count + 1}>Count: {count}</button>
 	<button on:click={(event) => handleClick(event, 5)}>Count: {count}</button>
-	<button on:click={(event) => handleClick(event, 10)}>Count: {count}</button>
+	<button on:click={(event) => handleClick(event, 10)}>Count: {count}</button> -->
+
+	<!-- VIDS 13- -->
+	<div>
+		<pre>
+			{JSON.stringify(formValues, null, 4)}
+		</pre>
+	</div>
+	<form action="">
+		<div>
+			<label for="name">Name</label>
+			<input type="text" id="name" bind:value={formValues.name}/>
+		</div>
+		<div>
+			<label for="profile">Profile Summary</label>
+			<textarea id="profile" bind:value={formValues.profileSummary} />
+		</div>
+		<div>
+			<label for="country">Country</label>
+			<select name="" id="country" bind:value={formValues.country}>
+				<option value="canada">Canada</option>
+				<option value="india">India</option>
+				<option value="japan">Japan</option>
+			</select>
+		</div>
+		<div>
+			<label for="jobLocation">Job Location</label>
+			<select name="" id="jobLocation" bind:value={formValues.jobLocation} multiple>
+				<option value="canada">Canada</option>
+				<option value="india">India</option>
+				<option value="japan">Japan</option>
+			</select>
+		</div>
+	</form>
 </main>
 
 <style>
@@ -77,8 +118,13 @@
 	.promoted {
 		font-style: italic;
 	} */
+
+	/* VIDS 13- */
+	input + label {
+		display: inline-flex;
+	}
 	main {
-		text-align: center;
+		/* text-align: center; */
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
