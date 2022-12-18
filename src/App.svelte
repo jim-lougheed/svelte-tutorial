@@ -22,19 +22,43 @@
 	// 	count += increment;
 	// }
 
-	// VIDS 13-
-	const formValues = {
-		name: '',
-		profileSummary: '',
-		country: '',
-		jobLocation: [],
-		remoteWork: false,
-		skillSet: [],
-		yearsOfExperience: '',
-	};
-	function handleFormSubmit(event) {
-		console.log("Form values: ", formValues);
-	}
+	// VIDS 13-14
+	// const formValues = {
+	// 	name: '',
+	// 	profileSummary: '',
+	// 	country: '',
+	// 	jobLocation: [],
+	// 	remoteWork: false,
+	// 	skillSet: [],
+	// 	yearsOfExperience: '',
+	// };
+	// function handleFormSubmit(event) {
+	// 	console.log("Form values: ", formValues);
+	// }
+
+	// VIDS 15
+	let firstName = "Bruce";
+	let lastName = "Wayne";
+	$:fullName = `${firstName} ${lastName}`;
+
+	let items = [
+		{
+			id: 1,
+			title: "TV",
+			price: 100,
+		},
+		{
+			id: 2,
+			title: "Phone",
+			price: 200,
+		},
+		{
+			id: 3,
+			title: "Computer",
+			price: 300,
+		},
+	];
+	$:total = items.reduce((total, curr) => (total = total + curr.price), 0);
 </script>
 
 <main>
@@ -76,8 +100,8 @@
 	<button on:click={(event) => handleClick(event, 5)}>Count: {count}</button>
 	<button on:click={(event) => handleClick(event, 10)}>Count: {count}</button> -->
 
-	<!-- VIDS 13- -->
-	<div>
+	<!-- VIDS 13-14 -->
+	<!-- <div>
 		<pre>
 			{JSON.stringify(formValues, null, 4)}
 		</pre>
@@ -134,7 +158,18 @@
 		<div>
 			<button>Submit</button>
 		</div>
-	</form>
+	</form> -->
+
+	<!-- VIDS 15 -->
+	<button on:click={() => {
+		firstName = "Clark";
+		lastName = "Kent";
+	}}>Change name</button>
+	<h2>{firstName} {lastName}</h2>
+	<h2>{fullName}</h2>
+
+	<button on:click={() => (items = [...items, { id: 4, title: "Keyboard", price: 50 }])}>Add item</button>
+	<h2>Total - {total}</h2>
 </main>
 
 <style>
