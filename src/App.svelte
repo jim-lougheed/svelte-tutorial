@@ -36,10 +36,14 @@
 	// 	console.log("Form values: ", formValues);
 	// }
 
-	// VIDS 15
+	// VIDS 15-
 	let firstName = "Bruce";
 	let lastName = "Wayne";
 	$:fullName = `${firstName} ${lastName}`;
+	$:{
+		const greet = `Full name is ${firstName} ${lastName}`;
+		console.log(greet);
+	};
 
 	let items = [
 		{
@@ -59,6 +63,14 @@
 		},
 	];
 	$:total = items.reduce((total, curr) => (total = total + curr.price), 0);
+	let volume = 0;
+	$:if (volume < 0) {
+		alert("Can't go lower");
+		volume = 0;
+	} else if (volume > 20) {
+		alert("Can't go lower");
+		volume = 20;
+	}
 </script>
 
 <main>
@@ -170,6 +182,9 @@
 
 	<button on:click={() => (items = [...items, { id: 4, title: "Keyboard", price: 50 }])}>Add item</button>
 	<h2>Total - {total}</h2>
+	<h2>Current volume {volume}</h2>
+	<button on:click={() => (volume += 2)}>Increase volume</button>
+	<button on:click={() => (volume -= 2)}>Decrease volume</button>
 </main>
 
 <style>
