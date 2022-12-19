@@ -1,19 +1,32 @@
 <script>
-    import Greet from "./components/Greet.svelte";
+	// VIDS 17-18
+    // import Greet from "./components/Greet.svelte";
+	// const userName = "Jim";
+	// const job = "developer";
+	// const obj = {
+	// 	name: "Barry",
+	// 	heroName: "The Flash",
+	// }
+
+	// VIDS 19-
+	import ComponentC from "./components/ComponentC.svelte";
+	import { setContext } from "svelte";
+
 	const userName = "Jim";
-	const job = "developer";
-	const obj = {
-		name: "Barry",
-		heroName: "The Flash",
-	}
+	setContext('username-context', userName);
 </script>
 
 <main>
-	<Greet name="Bruce" heroName="Batman"></Greet>
+	<!-- VIDS 17-18 -->
+	<!-- <Greet name="Bruce" heroName="Batman"></Greet>
 	<Greet name="Clark" heroName="Superman"></Greet>
 	<Greet name="Diana" heroName="Wonder Woman"></Greet>
 	<Greet name={userName} heroName={job}></Greet>
-	<Greet {...obj}></Greet>
+	<Greet {...obj}></Greet> -->
+
+	<!-- VIDS 19- -->
+	<h2>App Component Username - {userName}</h2>
+	<ComponentC></ComponentC>
 </main>
 
 <style>
