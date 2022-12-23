@@ -8,29 +8,34 @@
 	// 	heroName: "The Flash",
 	// }
 
-	// VIDS 19-
-	import ComponentC from "./components/ComponentC.svelte";
-	import { setContext } from "svelte";
+	// VID 19
+	// import ComponentC from "./components/ComponentC.svelte";
+	// import { setContext } from "svelte";
 
-	const userName = "Jim";
-	setContext('username-context', userName);
+	// const userName = "Jim";
+	// setContext('username-context', userName);
 
-	import Popup from "./components/Popup.svelte";
+	// VID 20
+	// import Popup from "./components/Popup.svelte";
 
-	let showPopup = false;
+	// let showPopup = false;
 
-	function closePopup(event) {
-		showPopup = false;
-		console.log(event.detail);
-	}
+	// function closePopup(event) {
+	// 	showPopup = false;
+	// 	console.log(event.detail);
+	// }
 
-	import Outer from "./components/Outer.svelte";
+	// import Outer from "./components/Outer.svelte";
 
-	function handleGreet(event) {
-		alert(event.detail);
-	}
+	// function handleGreet(event) {
+	// 	alert(event.detail);
+	// }
 
-	import Button from "./components/Button.svelte";
+	// VID 21
+	// import Button from "./components/Button.svelte";
+
+	// VID 22
+	import Card from "./components/Card.svelte";
 </script>
 
 <main>
@@ -41,18 +46,26 @@
 	<Greet name={userName} heroName={job}></Greet>
 	<Greet {...obj}></Greet> -->
 
-	<!-- VIDS 19- -->
-	<h2>App Component Username - {userName}</h2>
-	<ComponentC></ComponentC>
+	<!-- VID 19 -->
+	<!-- <h2>App Component Username - {userName}</h2>
+	<ComponentC></ComponentC> -->
 
-	<button on:click={() => showPopup = true}>Show Popup</button>
-	{#if showPopup}
+	<!-- VID 20 -->
+	<!-- <button on:click={() => showPopup = true}>Show Popup</button>
+	{#if showPopup} -->
 		<!-- <Popup on:close={() => showPopup = false}></Popup> -->
-		<Popup on:close={closePopup}></Popup>
-	{/if}
+		<!-- <Popup on:close={closePopup}></Popup>
+	{/if} -->
 
-	<Outer on:greet={handleGreet}></Outer>
-	<Button on:click={() => alert('Clicked')}></Button>
+	<!-- VID 21 -->
+	<!-- <Outer on:greet={handleGreet}></Outer>
+	<Button on:click={() => alert('Clicked')}></Button> -->
+	
+	<!-- VID 22 -->
+	<Card>Card content 1</Card>
+	<Card><h2>Card content 2</h2></Card>
+	<Card><img src="http://picsum.photos/200" alt="sample"/></Card>
+	<Card></Card>
 </main>
 
 <style>
