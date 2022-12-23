@@ -62,10 +62,23 @@
 	<Button on:click={() => alert('Clicked')}></Button> -->
 	
 	<!-- VID 22 -->
-	<Card>Card content 1</Card>
+	<!-- <Card>Card content 1</Card>
 	<Card><h2>Card content 2</h2></Card>
 	<Card><img src="http://picsum.photos/200" alt="sample"/></Card>
-	<Card></Card>
+	<Card></Card> -->
+
+	<!-- VID 23 -->
+	<Card>
+		<div slot="header">
+			<h3>Header</h3>
+		</div>
+		<div slot="content">
+			<img src="http://picsum.photos/200" alt="sample"/>
+		</div>
+		<div slot="footer">
+			<button>View Details</button>
+		</div>
+	</Card>
 </main>
 
 <style>

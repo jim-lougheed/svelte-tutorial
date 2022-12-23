@@ -1,11 +1,27 @@
 <script>
-    export let content;
+    // VID 22
+    // export let content;
 </script>
 
 <div class="card">
-    <slot>
+    <!-- VID 22 -->
+    <!-- <slot>
         Default content
-    </slot>
+    </slot> -->
+
+    <!-- VID 23 -->
+    <div class="card-header">
+        <slot name="header"></slot>
+    </div>
+    <div class="card-content">
+        <slot name="content">Default content</slot>
+    </div>
+    {#if $$slots.footer}
+    <hr />
+    {/if}
+    <div class="card-footer">
+        <slot name="footer"></slot>
+    </div>
 </div>
 
 <style>
