@@ -35,7 +35,10 @@
 	// import Button from "./components/Button.svelte";
 
 	// VID 22
-	import Card from "./components/Card.svelte";
+	// import Card from "./components/Card.svelte";
+
+	// VID 24
+	import NameList from "./components/NameList.svelte";
 </script>
 
 <main>
@@ -68,7 +71,7 @@
 	<Card></Card> -->
 
 	<!-- VID 23 -->
-	<Card>
+	<!-- <Card>
 		<div slot="header">
 			<h3>Header</h3>
 		</div>
@@ -78,7 +81,18 @@
 		<div slot="footer">
 			<button>View Details</button>
 		</div>
-	</Card>
+	</Card> -->
+
+	<!-- VID 24 -->
+	<NameList>
+		<h3 slot="hero" let:firstName let:lastName>{firstName} {lastName}</h3>
+	</NameList>
+	<NameList>
+		<h3 slot="hero" let:firstName let:lastName>{lastName}, {firstName}</h3>
+	</NameList>
+	<NameList>
+		<h3 slot="hero" let:firstName>{firstName}</h3>
+	</NameList>
 </main>
 
 <style>
