@@ -14,6 +14,15 @@
 
 	const userName = "Jim";
 	setContext('username-context', userName);
+
+	import Popup from "./components/Popup.svelte";
+
+	let showPopup = false;
+
+	function closePopup(event) {
+		showPopup = false;
+		console.log(event.detail);
+	}
 </script>
 
 <main>
@@ -27,6 +36,12 @@
 	<!-- VIDS 19- -->
 	<h2>App Component Username - {userName}</h2>
 	<ComponentC></ComponentC>
+
+	<button on:click={() => showPopup = true}>Show Popup</button>
+	{#if showPopup}
+		<!-- <Popup on:close={() => showPopup = false}></Popup> -->
+		<Popup on:close={closePopup}></Popup>
+	{/if}
 </main>
 
 <style>
