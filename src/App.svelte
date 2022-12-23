@@ -38,7 +38,10 @@
 	// import Card from "./components/Card.svelte";
 
 	// VID 24
-	import NameList from "./components/NameList.svelte";
+	// import NameList from "./components/NameList.svelte";
+
+	// VID 25
+	import ChildStyles from "./components/ChildStyles.svelte";
 </script>
 
 <main>
@@ -84,7 +87,7 @@
 	</Card> -->
 
 	<!-- VID 24 -->
-	<NameList>
+	<!-- <NameList>
 		<h3 slot="hero" let:firstName let:lastName>{firstName} {lastName}</h3>
 	</NameList>
 	<NameList>
@@ -92,10 +95,21 @@
 	</NameList>
 	<NameList>
 		<h3 slot="hero" let:firstName>{firstName}</h3>
-	</NameList>
+	</NameList> -->
+
+	<!-- VID 25 -->
+	<h4>App component text</h4>
+	<h3>App component global style</h3>
+	<ChildStyles></ChildStyles>
 </main>
 
 <style>
+	:global(h3) {
+		color: blue;
+	}
+	h4 {
+		color: orange;
+	}
 	main {
 		text-align: center;
 		padding: 1em;
