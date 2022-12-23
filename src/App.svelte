@@ -23,6 +23,14 @@
 		showPopup = false;
 		console.log(event.detail);
 	}
+
+	import Outer from "./components/Outer.svelte";
+
+	function handleGreet(event) {
+		alert(event.detail);
+	}
+
+	import Button from "./components/Button.svelte";
 </script>
 
 <main>
@@ -42,6 +50,9 @@
 		<!-- <Popup on:close={() => showPopup = false}></Popup> -->
 		<Popup on:close={closePopup}></Popup>
 	{/if}
+
+	<Outer on:greet={handleGreet}></Outer>
+	<Button on:click={() => alert('Clicked')}></Button>
 </main>
 
 <style>
