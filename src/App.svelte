@@ -3,6 +3,7 @@
 import Display from "./components/Display.svelte";
     import Increment from "./components/Increment.svelte";
     import Reset from "./components/Reset.svelte";
+    import Timer from "./components/Timer.svelte";
 </script>
 
 <main>
@@ -12,6 +13,8 @@ import Display from "./components/Display.svelte";
 	<Increment></Increment>
 	<Decrement></Decrement>
 	<Reset></Reset>
+
+	<Timer></Timer>
 <style>
 	main {
 		text-align: center;
