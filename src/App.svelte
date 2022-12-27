@@ -1,49 +1,17 @@
 <script>
-	// VID 27
-    //import PostList from "./components/PostList.svelte";
-
-	// VID 28
-	// import AutoFocus from "./components/AutoFocus.svelte";
-
-	// VID 29
-	// import TabA from "./components/TabA.svelte";
-	// import TabB from "./components/TabB.svelte";
-	// import TabC from "./components/TabC.svelte";
-
-	// let activeTab = TabA;
-
-	// VID 30
-	import Counter, { getTotalCount } from "./components/Counter.svelte";
+	import Decrement from "./components/Decrement.svelte";
+import Display from "./components/Display.svelte";
+    import Increment from "./components/Increment.svelte";
+    import Reset from "./components/Reset.svelte";
 </script>
 
 <main>
-	<!-- VID 27 -->
-	<!-- <PostList></PostList> -->
 
-	<!-- VID 28 -->
-	<!-- <AutoFocus></AutoFocus> -->
-
-	<!-- VID 29 -->
-	<!-- <button on:click={() => activeTab = TabA}>TabA</button>
-	<button on:click={() => activeTab = TabB}>TabB</button>
-	<button on:click={() => activeTab = TabC}>TabC</button> -->
-
-	<!-- {#if (activeTab === 'TabA')}
-		<TabA></TabA>
-	{:else if (activeTab === 'TabB')}
-		<TabB></TabB>
-	{:else if (activeTab === 'TabC')}
-		<TabC></TabC>
-	{/if} -->
-	<!-- <svelte:component this={activeTab}></svelte:component> -->
-
-	<!-- VID 30 -->
-	<button on:click={() => alert(getTotalCount())}>Alert Total Count</button>
-	<Counter></Counter>
-	<Counter></Counter>
-	<Counter></Counter>
 </main>
-
+	<Display></Display>
+	<Increment></Increment>
+	<Decrement></Decrement>
+	<Reset></Reset>
 <style>
 	main {
 		text-align: center;
