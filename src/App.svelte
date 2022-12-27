@@ -6,11 +6,14 @@
 	// import AutoFocus from "./components/AutoFocus.svelte";
 
 	// VID 29
-	import TabA from "./components/TabA.svelte";
-	import TabB from "./components/TabB.svelte";
-	import TabC from "./components/TabC.svelte";
+	// import TabA from "./components/TabA.svelte";
+	// import TabB from "./components/TabB.svelte";
+	// import TabC from "./components/TabC.svelte";
 
-	let activeTab = TabA;
+	// let activeTab = TabA;
+
+	// VID 30
+	import Counter, { getTotalCount } from "./components/Counter.svelte";
 </script>
 
 <main>
@@ -21,9 +24,9 @@
 	<!-- <AutoFocus></AutoFocus> -->
 
 	<!-- VID 29 -->
-	<button on:click={() => activeTab = TabA}>TabA</button>
+	<!-- <button on:click={() => activeTab = TabA}>TabA</button>
 	<button on:click={() => activeTab = TabB}>TabB</button>
-	<button on:click={() => activeTab = TabC}>TabC</button>
+	<button on:click={() => activeTab = TabC}>TabC</button> -->
 
 	<!-- {#if (activeTab === 'TabA')}
 		<TabA></TabA>
@@ -32,7 +35,13 @@
 	{:else if (activeTab === 'TabC')}
 		<TabC></TabC>
 	{/if} -->
-	<svelte:component this={activeTab}></svelte:component>
+	<!-- <svelte:component this={activeTab}></svelte:component> -->
+
+	<!-- VID 30 -->
+	<button on:click={() => alert(getTotalCount())}>Alert Total Count</button>
+	<Counter></Counter>
+	<Counter></Counter>
+	<Counter></Counter>
 </main>
 
 <style>
