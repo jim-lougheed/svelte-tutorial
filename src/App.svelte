@@ -1,11 +1,17 @@
 <script>
-    import PostList from "./components/PostList.svelte";
+	// VID 27
+    //import PostList from "./components/PostList.svelte";
 
-
+	// VID 28
+	import AutoFocus from "./components/AutoFocus.svelte";
 </script>
 
 <main>
-	<PostList></PostList>
+	<!-- VID 27 -->
+	<!-- <PostList></PostList> -->
+
+	<!-- VID 28 -->
+	<AutoFocus></AutoFocus>
 </main>
 
 <style>
